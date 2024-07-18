@@ -44,6 +44,7 @@ public class Main {
     }
 
     private static void console(TS_ThreadSyncTrigger kt, String[] args, int configLoadCmdFlagIdx) {
+        d.cr("console", "hello");
         if (args.length <= configLoadCmdFlagIdx + 1) {
             d.ce("main", "ERROR: config file is not given!");
             System.exit(1);
@@ -83,6 +84,7 @@ public class Main {
     }
 
     private static void gui(TS_ThreadSyncTrigger kt) {
+        d.cr("gui", "hello");
         TGS_UnSafe.run(() -> {
             TS_DesktopMainUtils.setThemeAndinvokeLaterAndFixTheme(() -> {
                 return gui_component(kt);
@@ -91,6 +93,7 @@ public class Main {
     }
 
     private static Component gui_component(TS_ThreadSyncTrigger kt) {
+        d.cr("gui_component", "hello");
         {//CREATE FRAME
             mainFrame = new MainFrame();
             mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
