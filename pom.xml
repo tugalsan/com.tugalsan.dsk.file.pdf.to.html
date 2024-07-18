@@ -79,7 +79,52 @@
                     </compilerArgs> -->
                 </configuration>
             </plugin>
-            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>clean_and_upgrade</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>java</executable>
+                    <commandlineArgs>-jar C:/git/trm/com.tugalsan.trm.migration.jakarta/target/com.tugalsan.trm.migration.jakarta-1.0.9-SNAPSHOT-shaded.jar C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies_cleaned-and-migrated.jar</commandlineArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <target>
+                        <!-- jar -->
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies_cleaned-and-migrated.jar" tofile="\\192.168.5.15\c\bin\com.tugalsan.dsk.file.pdf.to.html\home\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar"/>
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies_cleaned-and-migrated.jar" tofile="\\10.0.0.10\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar"/> 
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies_cleaned-and-migrated.jar" tofile="\\192.168.7.1\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar"/>
+                        <!-- run_gui.bat -->
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_gui.bat" tofile="\\192.168.5.15\c\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_gui.bat"/>
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_gui.bat" tofile="\\10.0.0.10\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_gui.bat"/> 
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_gui.bat" tofile="\\192.168.7.1\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_gui.bat"/>
+                        <!-- run_with_props -->
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_with_props.bat" tofile="\\192.168.5.15\c\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_with_props.bat"/>
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_with_props.bat" tofile="\\10.0.0.10\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_with_props.bat"/> 
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_with_props.bat" tofile="\\192.168.7.1\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_with_props.bat"/>
+                    </target>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
