@@ -1,1 +1,1 @@
-java -jar target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies_cleaned-and-migrated.jar
+java -jar target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar

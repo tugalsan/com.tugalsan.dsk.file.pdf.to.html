@@ -103,14 +103,17 @@
                 <configuration>
                     <target>
                         <!-- jar -->
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies_cleaned-and-migrated.jar" tofile="C:\bin\com.tugalsan.dsk.file.pdf.to.html\home\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar"/>
                         <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies_cleaned-and-migrated.jar" tofile="\\192.168.5.15\c\bin\com.tugalsan.dsk.file.pdf.to.html\home\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar"/>
                         <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies_cleaned-and-migrated.jar" tofile="\\10.0.0.10\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar"/> 
                         <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies_cleaned-and-migrated.jar" tofile="\\192.168.7.1\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar"/>
                         <!-- run_gui.bat -->
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_gui.bat" tofile="C:\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_gui.bat"/>
                         <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_gui.bat" tofile="\\192.168.5.15\c\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_gui.bat"/>
                         <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_gui.bat" tofile="\\10.0.0.10\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_gui.bat"/> 
                         <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_gui.bat" tofile="\\192.168.7.1\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_gui.bat"/>
                         <!-- run_with_props -->
+                        <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_with_props.bat" tofile="C:\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_with_props.bat"/>
                         <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_with_props.bat" tofile="\\192.168.5.15\c\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_with_props.bat"/>
                         <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_with_props.bat" tofile="\\10.0.0.10\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_with_props.bat"/> 
                         <copy file="C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\run_with_props.bat" tofile="\\192.168.7.1\d\bin\com.tugalsan.dsk.file.pdf.to.html\home\run_with_props.bat"/>
