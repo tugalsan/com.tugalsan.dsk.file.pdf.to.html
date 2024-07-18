@@ -3,7 +3,7 @@ package com.tugalsan.dsk.file.pdf.to.html;
 import com.tugalsan.api.charset.client.TGS_CharSetCast;
 import com.tugalsan.api.file.properties.server.TS_FilePropertiesUtils;
 import static com.tugalsan.dsk.file.pdf.to.html.Main.mainFrame;
-import com.tugalsan.lib.file.pdf.to.html.server.TS_LibFilePdfFromToUtils;
+import com.tugalsan.lib.file.pdf.to.html.server.TS_LibFilePdfToHtmlUtils;
 import java.awt.FileDialog;
 import java.nio.file.Path;
 import javax.swing.text.JTextComponent;
@@ -33,9 +33,8 @@ public class MainRecordFile {
     }
 
     public static void pdfInput() {
-        thing(TS_LibFilePdfFromToUtils.CONFIG_PARAM_PATH_INPUT, "*.pdf", Main.mainFrame.tfPdfInput);
-        mainFrame.tfHtmlOutput.setText(
-                TS_LibFilePdfFromToUtils.pathOutput(
+        thing(TS_LibFilePdfToHtmlUtils.CONFIG_PARAM_PATH_INPUT, "*.pdf", Main.mainFrame.tfPdfInput);
+        mainFrame.tfHtmlOutput.setText(TS_LibFilePdfToHtmlUtils.pathOutput(
                         Path.of(
                                 mainFrame.tfPdfInput.getText()
                         )

@@ -11,7 +11,7 @@ import com.tugalsan.api.file.server.TS_FileUtils;
 import com.tugalsan.api.log.server.TS_Log;
 import com.tugalsan.api.thread.server.sync.TS_ThreadSyncTrigger;
 import com.tugalsan.api.unsafe.client.TGS_UnSafe;
-import com.tugalsan.lib.file.pdf.to.html.server.TS_LibFilePdfFromToUtils;
+import com.tugalsan.lib.file.pdf.to.html.server.TS_LibFilePdfToHtmlUtils;
 import java.awt.Component;
 import java.nio.file.Path;
 import java.util.Properties;
@@ -34,7 +34,7 @@ public class Main {
         TGS_UnSafe.run(() -> {
             var kt = TS_ThreadSyncTrigger.of();
             var configLoadCmdFlagIdx = IntStream.range(0, args.length)
-                    .filter(i -> args[i].equals(TS_LibFilePdfFromToUtils.EXECUTE_PARAM_LOAD_CONFIG_FILE)).findAny().orElse(-1);
+                    .filter(i -> args[i].equals(TS_LibFilePdfToHtmlUtils.EXECUTE_PARAM_LOAD_CONFIG_FILE)).findAny().orElse(-1);
             if (configLoadCmdFlagIdx == -1) {
                 gui(kt);
             } else {
@@ -66,9 +66,9 @@ public class Main {
             d.cr("console", "props.read: OK");
             props = u_props.value();
             {
-                var op = TS_FilePropertiesUtils.getValue(props, TS_LibFilePdfFromToUtils.CONFIG_PARAM_PATH_INPUT);
+                var op = TS_FilePropertiesUtils.getValue(props, TS_LibFilePdfToHtmlUtils.CONFIG_PARAM_PATH_INPUT);
                 if (op.isEmpty()) {
-                    d.ce("console", "ERROR: " + TS_LibFilePdfFromToUtils.CONFIG_PARAM_PATH_INPUT + " param not present in config file");
+                    d.ce("console", "ERROR: " + TS_LibFilePdfToHtmlUtils.CONFIG_PARAM_PATH_INPUT + " param not present in config file");
                     System.exit(1);
                 }
                 var str = op.orElseThrow();
@@ -80,7 +80,7 @@ public class Main {
             d.ce("console", "ERROR: pathInput is not found!", pathInput);
             System.exit(1);
         }
-        MainWork.work(true, pathInput, TS_LibFilePdfFromToUtils.pathOutput(pathInput));
+        MainWork.work(true, pathInput, TS_LibFilePdfToHtmlUtils.pathOutput(pathInput));
     }
 
     private static void gui(TS_ThreadSyncTrigger kt) {
@@ -115,11 +115,10 @@ public class Main {
                 MainLog.add("props.read: OK");
                 props = u_props.value();
                 {
-                    var u = TS_FilePropertiesUtils.getValue(props, TS_LibFilePdfFromToUtils.CONFIG_PARAM_PATH_INPUT);
+                    var u = TS_FilePropertiesUtils.getValue(props, TS_LibFilePdfToHtmlUtils.CONFIG_PARAM_PATH_INPUT);
                     if (u.isPresent()) {
                         mainFrame.tfPdfInput.setText(u.orElseThrow());
-                        mainFrame.tfHtmlOutput.setText(
-                                TS_LibFilePdfFromToUtils.pathOutput(
+                        mainFrame.tfHtmlOutput.setText(TS_LibFilePdfToHtmlUtils.pathOutput(
                                         Path.of(
                                                 mainFrame.tfPdfInput.getText()
                                         )
