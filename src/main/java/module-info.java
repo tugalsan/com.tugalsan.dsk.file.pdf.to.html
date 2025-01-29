@@ -1,6 +1,7 @@
 module com.tugalsan.dsk.file.pdf.to.html {
     requires org.apache.pdfbox;
-    requires net.sf.cssbox.pdf2dom;
+    //requires net.sf.cssbox.pdf2dom;
+    requires com.tugalsan.api.file.pdf.pdfbox3.pdf2dom;
     requires AbsoluteLayout.RELEASE210;
     requires java.desktop;
     requires com.tugalsan.api.function;

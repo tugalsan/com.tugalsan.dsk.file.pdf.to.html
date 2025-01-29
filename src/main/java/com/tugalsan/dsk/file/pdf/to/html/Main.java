@@ -60,7 +60,7 @@ public class Main {
             var u_props = TS_FilePropertiesUtils.createPropertyReader(pathConfig);
             if (u_props.isExcuse()) {
                 d.ce("console", "ERROR: " + u_props.excuse().getMessage());
-                props = TS_FilePropertiesUtils.empty();
+                props = TS_FilePropertiesUtils.createNewInstance();
                 System.exit(1);
             }
             d.cr("console", "props.read: OK");
@@ -110,7 +110,7 @@ public class Main {
             var u_props = TS_FilePropertiesUtils.createPropertyReader(pathConfig);
             if (u_props.isExcuse()) {
                 MainLog.add("ERROR: " + u_props.excuse().getMessage());
-                props = TS_FilePropertiesUtils.empty();
+                props = TS_FilePropertiesUtils.createNewInstance();
             } else {
                 MainLog.add("props.read: OK");
                 props = u_props.value();

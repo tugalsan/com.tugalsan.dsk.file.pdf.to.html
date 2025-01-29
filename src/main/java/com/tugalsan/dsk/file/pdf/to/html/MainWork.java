@@ -6,7 +6,7 @@ import com.tugalsan.api.unsafe.client.TGS_UnSafe;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
-import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.Loader;
 import org.fit.pdfdom.PDFDomTree;
 
 public class MainWork {
@@ -21,7 +21,8 @@ public class MainWork {
                 System.exit(1);
             }
             d.cr("work", "init", srcPDF, dstHTM);
-            try (var pdf = PDDocument.load(srcPDF.toFile()); var output = new PrintWriter(dstHTM.toFile(), StandardCharsets.UTF_8);) {
+            try (var pdf = Loader.loadPDF(srcPDF.toFile()); var output = new PrintWriter(dstHTM.toFile(), StandardCharsets.UTF_8);) {
+            //try (var pdf = PDDocument.load(srcPDF.toFile()); var output = new PrintWriter(dstHTM.toFile(), StandardCharsets.UTF_8);) {
                 new PDFDomTree().writeText(pdf, output);
             }
             if (isConsole) {
