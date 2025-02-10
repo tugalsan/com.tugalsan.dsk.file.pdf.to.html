@@ -2,7 +2,7 @@ package com.tugalsan.dsk.file.pdf.to.html;
 
 import com.tugalsan.api.file.server.TS_FileUtils;
 import com.tugalsan.api.log.server.TS_Log;
-import com.tugalsan.api.unsafe.client.TGS_UnSafe;
+import com.tugalsan.api.function.client.maythrow.checkedexceptions.TGS_FuncMTCEUtils;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
@@ -14,7 +14,7 @@ public class MainWork {
     final private static TS_Log d = TS_Log.of(MainWork.class);
 
     public static void work(boolean isConsole, Path srcPDF, Path dstHTM) {
-        TGS_UnSafe.run(() -> {
+        TGS_FuncMTCEUtils.run(() -> {
             TS_FileUtils.deleteFileIfExists(dstHTM);
             if (TS_FileUtils.isExistFile(dstHTM)) {
                 d.cr("work", "ERROR canot delete outputFile", dstHTM);

@@ -1,23 +1,24 @@
 package com.tugalsan.dsk.file.pdf.to.html;
 
-import com.tugalsan.api.thread.server.async.TS_ThreadAsync;
-import com.tugalsan.api.unsafe.client.TGS_UnSafe;
-import com.tugalsan.api.unsafe.client.TGS_UnSafeRunnable;
+import com.tugalsan.api.thread.server.async.run.TS_ThreadAsyncRun;
+import .client.TGS_FuncMTUCE;
+import com.tugalsan.api.function.client.maythrow.uncheckedexceptions.TGS_FuncMTUCE;
+import com.tugalsan.api.function.client.maythrow.checkedexceptions.TGS_FuncMTCEUtils;
 import java.time.Duration;
 
 public class MainAsync {
 
     final public static Duration RUN_SECONDS = Duration.ofSeconds(10);
 
-    public static void run(TGS_UnSafeRunnable exe) {
+    public static void run(TGS_FuncMTUCE exe) {
         run(exe, RUN_SECONDS);
     }
 
-    public static void run(TGS_UnSafeRunnable exe, Duration until) {
-        TS_ThreadAsync.now(null, kt -> {
+    public static void run(TGS_FuncMTUCE exe, Duration until) {
+        TS_ThreadAsyncRun.now(null, kt -> {
 //            var u = TS_ThreadAsyncAwait.runUntil(kt, until, kt2 -> {
 //                MainLog.add("AWAIT.BEGIN...");
-                TGS_UnSafe.run(exe, e -> MainLog.add("ERROR: " + e.getMessage()));
+                TGS_FuncMTCEUtils.run(exe, e -> MainLog.add("ERROR: " + e.getMessage()));
 //            });
 //            if (u.timeout()) {
 //                MainLog.add("AWAIT.ERROR: TIMEOUT");
