@@ -32,7 +32,7 @@ public class Main {
     //java --enable-preview --add-modules jdk.incubator.vector -jar target/com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar
     public static void main(String[] args) {
         TGS_FuncMTCEUtils.run(() -> {
-            var kt = TS_ThreadSyncTrigger.of();
+            var kt = TS_ThreadSyncTrigger.of("main");
             var configLoadCmdFlagIdx = IntStream.range(0, args.length)
                     .filter(i -> args[i].equals(TS_LibFilePdfToHtmlUtils.EXECUTE_PARAM_LOAD_CONFIG_FILE)).findAny().orElse(-1);
             if (configLoadCmdFlagIdx == -1) {
