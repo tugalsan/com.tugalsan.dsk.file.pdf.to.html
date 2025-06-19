@@ -97,7 +97,7 @@
                 </executions>
                 <configuration>
                     <executable>java</executable>
-                    <commandlineArgs>-jar C:/git/trm/com.tugalsan.trm.migration.jakarta/target/com.tugalsan.trm.migration.jakarta-1.0.9-SNAPSHOT-shaded.jar C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies_cleaned-and-migrated.jar</commandlineArgs>
+                    <commandlineArgs>-jar C:/git/trm/com.tugalsan.trm.migration.jakarta/target/com.tugalsan.trm.migration.jakarta-1.0.10-SNAPSHOT-shaded.jar C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies.jar C:\git\dsk\com.tugalsan.dsk.file.pdf.to.html\target\com.tugalsan.dsk.file.pdf.to.html-1.0-SNAPSHOT-jar-with-dependencies_cleaned-and-migrated.jar</commandlineArgs>
                 </configuration>
             </plugin>
             <plugin>
